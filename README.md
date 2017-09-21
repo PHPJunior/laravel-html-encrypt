@@ -1,1 +1,1 @@
-# laravel-html-encrypt
+# Laravel Html Encrypt
