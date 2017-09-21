@@ -1,5 +1,8 @@
 # Laravel Html Encrypt
 
+[![Latest Stable Version](https://poser.pugx.org/php-junior/laravel-html-encrypt/v/stable)](https://packagist.org/packages/php-junior/laravel-html-encrypt)
+[![Total Downloads](https://poser.pugx.org/php-junior/laravel-html-encrypt/downloads)](https://packagist.org/packages/php-junior/laravel-html-encrypt)
+
 ## Installation
 
 You can install the package via composer:
