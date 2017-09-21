@@ -1,0 +1,26 @@
+{
+    "name": "php-junior/laravel-html-encrypt",
+    "description": "Simple Html Encrypt for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "html",
+        "encrypt"
+    ],
+    "require": {
+        "php": ">=5.6.4"
+    },
+    "type": "library",
+    "authors": [
+        {
+            "name": "Nyi Nyi Lwin",
+            "email": "nyinyilwin1992@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PhpJunior\\LaravelHtmlEncrypt\\": "src/"
+        }
+    }
+}
