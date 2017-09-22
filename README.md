@@ -10,6 +10,26 @@ You can install the package via composer:
  composer require php-junior/laravel-html-encrypt
 ```
 
+Once installed, in your project's config/app.php file replace the following entry from the providers array:
+
+```php
+PhpJunior\LaravelHtmlEncrypt\LaravelHtmlEncryptServiceProvider::class,
+```
+
+And 
+```php 
+php artisan vendor:publish --provider="PhpJunior\LaravelHtmlEncrypt\LaravelHtmlEncryptServiceProvider"
+```
+
+This is the contents of the published config file:
+
+```php
+return [
+    'disable_right_click'       => true,
+    'disable_ctrl_and_F12_key'  => true,
+];
+```
+
 Next you must add the `\PhpJunior\LaravelHtmlEncrypt\Middleware\HtmlEncrypt` middleware to the kernel.
 ```php
 // app/Http/Kernel.php
