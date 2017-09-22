@@ -6,6 +6,16 @@ use Closure;
 
 class HtmlEncrypt
 {
+    private $hex;
+
+    /**
+     * HtmlEncrypt constructor.
+     */
+    public function __construct()
+    {
+        $this->hex = '';
+    }
+
     /**
      * Handle an incoming request.
      *
@@ -31,14 +41,13 @@ class HtmlEncrypt
 
     public function encryptHtml($content)
     {
-        $hex = '';
+        $text = str_split(bin2hex($this->collapseWhiteSpace($content)),2);
 
-        for ($i = 0 ; $i < strlen($this->collapseWhiteSpace($content)) ; $i++)
-        {
-            $hex .= '%'.dechex(array_first(unpack('N', mb_convert_encoding(($this->collapseWhiteSpace($content))[$i], 'UCS-4BE', 'UTF-8'))));
-        }
+        array_walk($text , function (&$a) {
+            $this->addHexValue('%'.$a);
+        });
 
-        $script = '<script type="text/javascript">document.writeln(unescape("'.$hex.'"));</script>';
+        $script = '<script type="text/javascript">document.writeln(unescape("'.$this->hex.'"));</script>';
 
         if (config('laravel-html-encrypt.disable_right_click')){
             $script .= '<script>var body = document.getElementsByTagName("body")[0];var att = document.createAttribute("oncontextmenu");att.value = "return false";body.setAttributeNode(att);</script>';
@@ -65,5 +74,10 @@ class HtmlEncrypt
         ];
 
         return preg_replace(array_keys($replace), array_values($replace), $input);
+    }
+
+    public function addHexValue($hex)
+    {
+        $this->hex .= $hex;
     }
 }
