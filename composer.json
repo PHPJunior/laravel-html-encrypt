@@ -22,5 +22,12 @@
         "psr-4": {
             "PhpJunior\\LaravelHtmlEncrypt\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PhpJunior\\LaravelHtmlEncrypt\\LaravelHtmlEncryptServiceProvider"
+            ]
+        }
     }
 }
