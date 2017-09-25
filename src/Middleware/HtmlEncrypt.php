@@ -53,7 +53,7 @@ class HtmlEncrypt
             $script .= '<script>var body = document.getElementsByTagName("body")[0];var att = document.createAttribute("oncontextmenu");att.value = "return false";body.setAttributeNode(att);</script>';
         }
 
-        if (config('laravel-html-encrypt.disable_ctrl')){
+        if (config('laravel-html-encrypt.disable_ctrl_key')){
             $script .= '<script>document.onkeydown=function(e){if(e.ctrlKey){return false}}</script>';
         }
 
