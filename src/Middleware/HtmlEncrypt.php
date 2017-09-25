@@ -53,8 +53,12 @@ class HtmlEncrypt
             $script .= '<script>var body = document.getElementsByTagName("body")[0];var att = document.createAttribute("oncontextmenu");att.value = "return false";body.setAttributeNode(att);</script>';
         }
 
-        if (config('laravel-html-encrypt.disable_ctrl_and_F12_key')){
-            $script .= '<script>document.onkeydown=function(e){if(e.ctrlKey || e.keyCode == 123){return false}}</script>';
+        if (config('laravel-html-encrypt.disable_ctrl')){
+            $script .= '<script>document.onkeydown=function(e){if(e.ctrlKey){return false}}</script>';
+        }
+
+        if (config('laravel-html-encrypt.disable_F12_key')){
+            $script .= '<script>document.onkeydown=function(e){if(e.keyCode == 123){return false}}</script>';
         }
 
         return $script;

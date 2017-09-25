@@ -25,8 +25,9 @@ This is the contents of the published config file:
 
 ```php
 return [
-    'disable_right_click'       => true,
-    'disable_ctrl_and_F12_key'  => true,
+    'disable_right_click'  => true,
+    'disable_ctrl'         => true,
+    'disable_F12_key'      => true,
 ];
 ```
 
