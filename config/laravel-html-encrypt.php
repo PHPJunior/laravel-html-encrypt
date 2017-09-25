@@ -7,6 +7,7 @@
  */
 
 return [
-    'disable_right_click'       => true,
-    'disable_ctrl_and_F12_key'  => true,
+    'disable_right_click'  => true,
+    'disable_ctrl_key'     => true,
+    'disable_F12_key'      => true,
 ];
