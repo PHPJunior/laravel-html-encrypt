@@ -25,21 +25,10 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'encrypt' => env('HTML_ENCRYPT', true),
     'disable_right_click'       => true,
     'disable_ctrl_and_F12_key'  => true,
 ];
-```
-
-Next you must add the `\PhpJunior\LaravelHtmlEncrypt\Middleware\HtmlEncrypt` middleware to the kernel.
-```php
-// app/Http/Kernel.php
-
-...
-protected $middleware = [
-    ...
-    \PhpJunior\LaravelHtmlEncrypt\Middleware\HtmlEncrypt::class,
-];
-```
 
 ## HTML Encryption?
 
