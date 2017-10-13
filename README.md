@@ -29,6 +29,7 @@ return [
     'disable_right_click'       => true,
     'disable_ctrl_and_F12_key'  => true,
 ];
+```
 
 ## HTML Encryption?
 
