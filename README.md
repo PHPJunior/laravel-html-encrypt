@@ -9,8 +9,9 @@ You can install the package via composer:
 ``` bash
  composer require php-junior/laravel-html-encrypt
 ```
+Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
 
-Once installed, in your project's config/app.php file replace the following entry from the providers array:
+If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
 
 ```php
 PhpJunior\LaravelHtmlEncrypt\LaravelHtmlEncryptServiceProvider::class,
