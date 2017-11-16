@@ -4,6 +4,7 @@ namespace PhpJunior\LaravelHtmlEncrypt;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Http\Kernel;
+
 class LaravelHtmlEncryptServiceProvider extends ServiceProvider
 {
     /**

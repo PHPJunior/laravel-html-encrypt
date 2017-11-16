@@ -9,7 +9,9 @@
         "encrypt"
     ],
     "require": {
-        "php": ">=5.6.4"
+        "php": ">=5.6.4",
+        "illuminate/support": "5.3.* || 5.4.* || 5.5.*",
+        "illuminate/contracts": "^5.5"
     },
     "type": "library",
     "authors": [
@@ -23,11 +25,20 @@
             "PhpJunior\\LaravelHtmlEncrypt\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpJunior\\LaravelHtmlEncrypt\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "PhpJunior\\LaravelHtmlEncrypt\\LaravelHtmlEncryptServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4",
+        "graham-campbell/testbench": "^4.0"
     }
 }
