@@ -17,8 +17,8 @@ If you don't use auto-discovery, add the ServiceProvider to the providers array 
 PhpJunior\LaravelHtmlEncrypt\LaravelHtmlEncryptServiceProvider::class,
 ```
 
-And 
-```php 
+And
+```php
 php artisan vendor:publish --provider="PhpJunior\LaravelHtmlEncrypt\LaravelHtmlEncryptServiceProvider"
 ```
 
@@ -27,8 +27,9 @@ This is the contents of the published config file:
 ```php
 return [
     'encrypt' => env('HTML_ENCRYPT', true),
-    'disable_right_click'       => true,
-    'disable_ctrl_and_F12_key'  => true,
+    'disable_right_click'  => true,
+    'disable_ctrl_key'     => true,
+    'disable_F12_key'      => true,
 ];
 ```
 
