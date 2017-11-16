@@ -30,10 +30,12 @@ class HtmlEncrypt
          */
         $response = $next($request);
 
-        $contentType = $response->headers->get('Content-Type');
+        if ($request->isMethod('get') && !$request->ajax()) {
+            $contentType = $response->headers->get('Content-Type');
 
-        if (strpos($contentType, 'text/html') !== false) {
-            $response->setContent($this->encryptHtml($response->getContent()));
+            if (strpos($contentType, 'text/html') !== false) {
+                $response->setContent($this->encryptHtml($response->getContent()));
+            }
         }
 
         return $response;

@@ -19,7 +19,7 @@ class HtmlEncryptTest extends TestCase
     {
         $response = Response::create();
 
-        $request = $this->get('https://nyinyilwin.me');
+        $request = Request::create('https://nyinyilwin.me','get');
 
         $middleware = new HtmlEncrypt();
 
